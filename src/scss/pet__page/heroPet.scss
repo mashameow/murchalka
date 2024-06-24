@@ -1,0 +1,89 @@
+.heroPet {
+	&__container {
+		display: flex;
+		column-gap: 95px;
+		margin-top: 65px;
+	}
+	&__img {
+		width: 559px;
+		height: 559px;
+	}
+	&__info {
+		&-name {
+			display: flex;
+			max-width: 468px;
+			justify-content: space-between;
+			align-items: end;
+			&-h1 {
+				@include text('Montserrat', 48px, 700, $main);
+			}
+			&-text {
+				@include text('Montserrat', 20px, 500, $main);
+				padding-bottom: 12px;
+			}
+		}
+		&-description {
+			@include text('Montserrat', 16px, 500, $main);
+			padding: 13px 0 20px 0;
+		}
+		&-features {
+			@include text('Montserrat', 16px, 700, $main);
+		}
+		&-btn {
+			@include btn($accent2, $main2);
+			padding: 14px 20px;
+			transition: 0.3s;
+			border: 2px solid $main2;
+			&:hover {
+				border: 2px solid $accent2;
+			}
+		}
+	}
+}
+@media (max-width: 380px) {
+	.heroPet {
+		&__container {
+			column-gap: 5px;
+			margin-top: 20px;
+			flex-wrap: wrap;
+		}
+		&__img {
+			max-width: 350px;
+			height: fit-content;
+		}
+		&__info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			&-name {
+				display: flex;
+				max-width: 250px;
+				justify-content: space-between;
+				align-items: end;
+				&-h1 {
+					@include text('Montserrat', 25px, 700, $main);
+				}
+				&-text {
+					@include text('Montserrat', 10px, 500, $main);
+					padding-bottom: 6px;
+				}
+			}
+			&-description {
+				@include text('Montserrat', 10px, 500, $main);
+				padding: 5px 0 10px 0;
+			}
+			&-features {
+				@include text('Montserrat', 15px, 700, $main);
+			}
+			&-btn {
+				padding: 5px 10px;
+				font-size: 10px;
+				border-radius: 5px;
+				margin: 0 auto;
+				&:hover {
+					border: 2px solid $accent2;
+				}
+			}
+		}
+	}
+}

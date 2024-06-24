@@ -1,0 +1,110 @@
+@import '../variables.scss';
+.info {
+	&__title {
+		margin-top: 65px;
+		@include text('Montserrat', 20px, 500, $main);
+		text-align: center;
+		margin-bottom: 84px;
+		max-width: 1230px;
+	}
+	&__history {
+		display: flex;
+		position: relative;
+		&-ellipse {
+			position: absolute;
+			top: -103px;
+			right: 103px;
+			z-index: -1;
+		}
+		&-img {
+			border-radius: 15px;
+		}
+	}
+	&__company {
+		display: flex;
+		column-gap: 85px;
+		position: relative;
+		margin-top: 65px;
+		&-ellipse {
+			position: absolute;
+			top: 50px;
+			left: -35px;
+			z-index: -1;
+		}
+		&-block {
+			text-align: end;
+		}
+		&-img {
+			border-radius: 15px;
+			max-width: 470px;
+		}
+	}
+}
+
+.block {
+	&-title {
+		@include text('Montserrat', 32px, 700, $main);
+	}
+	&-text {
+		margin-top: 25px;
+		max-width: 837px;
+		@include text('Montserrat', 20px, 500, $main);
+	}
+}
+@media (max-width: 380px) {
+	.info {
+		&__title {
+			margin-top: 30px;
+			@include text('Montserrat', 10px, 500, $main);
+
+			margin-bottom: 20px;
+			max-width: 370px;
+		}
+		&__history {
+			display: block;
+			text-align: center;
+			&-block-title {
+				text-align: start;
+			}
+			&-block-text {
+				text-align: start;
+			}
+			&-ellipse {
+				top: -103px;
+				right: 103px;
+			}
+			&-img {
+				margin-top: 15px;
+				border-radius: 5px;
+				max-width: 200px;
+			}
+		}
+		&__company {
+			display: block;
+			margin-top: 15px;
+			text-align: end;
+			&-ellipse {
+				position: absolute;
+				top: 50px;
+				left: -35px;
+				z-index: -1;
+			}
+			&-block {
+				text-align: end;
+			}
+			&-img {
+				display: none;
+			}
+		}
+	}
+	.block {
+		&-title {
+			@include text('Montserrat', 15px, 700, $main);
+		}
+		&-text {
+			margin-top: 10px;
+			max-width: 370px;
+			@include text('Montserrat', 10px, 500, $main);
+		}
+	}
+}

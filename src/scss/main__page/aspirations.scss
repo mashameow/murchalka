@@ -1,0 +1,39 @@
+@import '../variables.scss';
+.aspirations {
+	margin-top: 80px;
+	&__title {
+		@include text('Montserrat', 20px, 700, $main);
+		text-align: center;
+	}
+	&__card {
+		display: flex;
+		align-items: center;
+		column-gap: 35px;
+		margin-top: 35px;
+		&-img {
+			max-width: 60px;
+		}
+		&-text {
+			@include text('Montserrat', 14px, 500, $main);
+		}
+	}
+}
+@media (max-width: 380px) {
+	.aspirations {
+		margin-top: 30px;
+		&__title {
+			@include text('Montserrat', 15px, 700, $main);
+		}
+		&__card {
+			flex-direction: column;
+			margin-top: 15px;
+			&-img {
+				max-width: 30px;
+			}
+			&-text {
+				@include text('Montserrat', 10px, 500, $main);
+				text-align: center;
+			}
+		}
+	}
+}

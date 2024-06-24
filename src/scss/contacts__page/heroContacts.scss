@@ -1,0 +1,117 @@
+@import '../variables.scss';
+.heroContacts {
+	&__container {
+		position: relative;
+	}
+	&__title {
+		@include text('Montserrat', 20px, 700, $main);
+		margin-top: 50px;
+		:nth-child(1) {
+			margin-top: 65px;
+		}
+	}
+	&__info {
+		margin-top: 65px;
+		display: flex;
+		justify-content: space-between;
+		&-text {
+			&-title {
+				@include text('Montserrat', 20px, 700, $main);
+				margin-top: 50px;
+				&:nth-child(1) {
+					margin-top: 0px;
+				}
+			}
+			&-description {
+				margin-top: 25px;
+				@include text('Montserrat', 16px, 500, $main);
+			}
+			&-socials {
+				margin-top: 25px;
+				column-gap: 25px;
+				display: flex;
+			}
+		}
+	}
+	&__description {
+		margin-top: 25px;
+		@include text('Montserrat', 16px, 500, $main);
+	}
+	&__rules {
+		padding-left: 25px;
+		&-text {
+			@include text('Montserrat', 16px, 500, $main);
+			&:nth-child(1) {
+				margin-top: 25px;
+			}
+		}
+	}
+	&__img {
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		z-index: -1;
+	}
+}
+iframe {
+	border-radius: 15px;
+	box-shadow: 0px 0px 15px 4px #00000040;
+}
+@media (max-width: 380px) {
+	.heroContacts {
+		&__title {
+			@include text('Montserrat', 10px, 700, $main);
+			margin-top: 15px;
+			:nth-child(1) {
+				margin-top: 30px;
+			}
+		}
+		&__info {
+			margin-top: 20px;
+			display: block;
+			justify-content: center;
+			&-text {
+				&-title {
+					@include text('Montserrat', 10px, 700, $main);
+					margin-top: 10px;
+				}
+				&-description {
+					margin-top: 10px;
+					@include text('Montserrat', 10px, 500, $main);
+				}
+				&-socials {
+					margin-top: 10px;
+					column-gap: 5px;
+					&-img-vk {
+						max-width: 25px;
+					}
+					&-img-tg {
+						max-width: 25px;
+					}
+				}
+			}
+		}
+		&__description {
+			margin-top: 15px;
+			@include text('Montserrat', 10px, 500, $main);
+		}
+		&__rules {
+			padding-left: 15px;
+			&-text {
+				@include text('Montserrat', 10px, 500, $main);
+				&:nth-child(1) {
+					margin-top: 15px;
+				}
+			}
+		}
+		&__img {
+			top: -30px;
+			right: 0px;
+			max-width: 120px;
+		}
+	}
+	iframe {
+		width: 355px;
+		height: 355px;
+	}
+}

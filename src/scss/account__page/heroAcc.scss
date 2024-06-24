@@ -1,0 +1,54 @@
+.heroAcc {
+	margin: 35px 0;
+	&__title {
+		@include text('Montserrat', 32px, 700, $main);
+		text-align: center;
+	}
+	&__info {
+		margin-top: 50px;
+		display: flex;
+		justify-content: space-between;
+		&-block {
+			&-text {
+				@include text('Montserrat', 16px, 500, $main);
+				margin-bottom: 24px;
+			}
+			&-people {
+				margin-bottom: 20px;
+				display: flex;
+				&-text {
+					@include text('Montserrat', 16px, 500, $main);
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 380px) {
+	.heroAcc {
+		margin: 20px 0;
+		&__title {
+			@include text('Montserrat', 15px, 700, $main);
+			text-align: center;
+		}
+		&__info {
+			margin-top: 15px;
+			&-img {
+				height: fit-content;
+				max-width: 50px;
+			}
+			&-block {
+				&-text {
+					@include text('Montserrat', 10px, 500, $main);
+					margin-bottom: 10px;
+				}
+				&-people {
+					&-text {
+						@include text('Montserrat', 10px, 500, $main);
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+	}
+}

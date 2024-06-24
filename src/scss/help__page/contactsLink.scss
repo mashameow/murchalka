@@ -1,0 +1,40 @@
+.contactsLink {
+	text-align: center;
+	margin-top: 95px;
+	&__title {
+		@include text('Montserrat', 24px, 700, $main);
+		margin: 0 auto;
+		max-width: 812px;
+	}
+	&__text {
+		@include text('Montserrat', 16px, 500, $main);
+		margin: 88px 0 35px 0;
+		.red {
+			font-weight: 700;
+		}
+	}
+	&__btn {
+		@include btn($accent2, $main2);
+		padding: 14px 49px;
+		display: inline-block;
+		margin-bottom: 50px;
+	}
+}
+@media (max-width: 380px) {
+	.contactsLink {
+		margin-top: 15px;
+		&__title {
+			@include text('Montserrat', 12px, 700, $main);
+		}
+		&__text {
+			@include text('Montserrat', 10px, 500, $main);
+			margin: 15px 0 15px 0;
+		}
+		&__btn {
+			padding: 5px 10px;
+			font-size: 10px;
+			border-radius: 5px;
+			margin-bottom: 25px;
+		}
+	}
+}

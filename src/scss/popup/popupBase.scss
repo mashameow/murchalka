@@ -1,0 +1,195 @@
+.popup {
+	position: fixed;
+	background-color: #0000007e;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	&-btn {
+		@include btn($accent, $main2);
+		font-size: 16px;
+		padding: 14px 0;
+		width: 283px;
+		display: inline-block;
+	}
+	&__block {
+		padding: 20px 25px;
+		background-color: $main2;
+		position: absolute;
+		top: 130px;
+		left: 385px;
+		max-width: 631px;
+		box-shadow: 0px 0px 15px 4px #00000040;
+		border-radius: 10px;
+		text-align: center;
+		&-title {
+			@include text('Montserrat', 20px, 700, $main);
+		}
+		&-text {
+			@include text('Montserrat', 16px, 500, $main);
+			text-transform: none;
+			text-align: left;
+			padding-left: 17px;
+			margin: 10px 0;
+		}
+		&-comment {
+			@include text('Montserrat', 10px, 500, $main);
+			margin: 14px 0;
+		}
+		&-input {
+			width: 597px;
+			height: 42px;
+			border-radius: 30px;
+			border: 1px solid $main2;
+
+			box-shadow: 0px 0px 15px 0px #00000040;
+			background-color: $main2;
+			padding: 0 17px;
+			@include text('Montserrat', 16px, 500, $main);
+			text-transform: none;
+			&::placeholder {
+				color: #d9d9d9;
+			}
+			&:last-of-type {
+				margin-bottom: 25px;
+			}
+		}
+	}
+}
+
+.close {
+	@include btn($accent2, $main2);
+	font-size: 30px;
+	border-radius: 100%;
+	position: absolute;
+	padding: 0px 0 0px 1px;
+	text-align: center;
+	width: 47px;
+	top: -22px;
+	right: -22px;
+	&:hover {
+		padding: 0px 0 0px 1px;
+		font-size: 30px;
+	}
+}
+.none {
+	display: none;
+}
+.reg__block {
+	top: 70px;
+}
+.popup__block-text-flex {
+	display: flex;
+	justify-content: space-between;
+}
+.popup__block-text-info-input {
+	width: 266px;
+	&:last-of-type {
+		margin-bottom: 0px;
+	}
+}
+.application__comment {
+	height: 200px;
+	vertical-align: text-top;
+	resize: none;
+	padding: 9px 17px;
+	border: 1px solid $main2;
+}
+.application__block {
+	top: 70px;
+}
+@media (max-width: 380px) {
+	.popup {
+		&-btn {
+			padding: 5px 10px;
+			font-size: 10px;
+			border-radius: 5px;
+			max-width: 180px;
+		}
+		&__block {
+			padding: 10px 15px;
+			background-color: $main2;
+			position: absolute;
+			top: 100px;
+			left: 9%;
+			max-width: 280px;
+			box-shadow: 0px 0px 15px 4px #00000040;
+			border-radius: 10px;
+			text-align: center;
+			&-title {
+				@include text('Montserrat', 15px, 700, $main);
+			}
+			&-text {
+				@include text('Montserrat', 10px, 500, $main);
+				text-transform: none;
+				padding-left: 15px;
+				margin: 5px 0;
+			}
+			&-comment {
+				@include text('Montserrat', 6px, 500, $main);
+				margin: 5px 0;
+			}
+			&-input {
+				width: 250px;
+				height: 20px;
+				border-radius: 30px;
+				border: 1px solid $main2;
+
+				box-shadow: 0px 0px 10px 0px #00000040;
+				background-color: $main2;
+				padding: 0 5px;
+				@include text('Montserrat', 10px, 500, $main);
+				text-transform: none;
+				&::placeholder {
+					color: #d9d9d9;
+				}
+				&:last-of-type {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	.close {
+		@include btn($accent2, $main2);
+		font-size: 20px;
+		border-radius: 100%;
+		position: absolute;
+		padding: 0px 0 0px 1px;
+		text-align: center;
+		width: 33px;
+		top: -15px;
+		right: -15px;
+		&:hover {
+			padding: 0px 0 0px 1px;
+			font-size: 30px;
+		}
+	}
+	.none {
+		display: none;
+	}
+	.reg__block {
+		top: 70px;
+	}
+	.popup__block-text-flex {
+		display: block;
+	}
+	.popup__block-text-info-input {
+		width: 250px;
+		&:last-of-type {
+			margin-bottom: 0px;
+		}
+	}
+	.application__comment {
+		height: 200px;
+		width: 225px;
+		vertical-align: text-top;
+		resize: none;
+		padding: 9px 17px;
+		border: 1px solid $main2;
+	}
+	.application__block {
+		top: 70px;
+	}
+}

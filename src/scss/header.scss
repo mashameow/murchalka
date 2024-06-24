@@ -1,0 +1,33 @@
+@import 'variables.scss';
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background-color: $main2;
+	box-shadow: 0px 0px 15px 4px #00000040;
+	&__container {
+		max-width: 1375px;
+		padding: 10px 0;
+	}
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		&-menu {
+			display: flex;
+			align-items: center;
+			column-gap: 25px;
+			justify-content: space-between;
+			&-link {
+				@include text('Montserrat', 18px, 500, $main);
+			}
+		}
+	}
+}
+@media (max-width: 380px) {
+	.header {
+		&__container {
+			max-width: 380px;
+			padding: 10px 10px;
+		}
+	}
+}

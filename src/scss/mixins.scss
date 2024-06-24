@@ -1,0 +1,25 @@
+@mixin text($family, $size, $weight, $color) {
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+	text-transform: uppercase;
+	color: $color;
+	letter-spacing: 1px;
+	line-height: 150%;
+}
+@mixin btn($color, $text) {
+	@include text('Montserrat', 16px, 700, $text);
+	padding: 23px 30px;
+	background-color: $color;
+	border-radius: 10px;
+	border: 2px solid $color;
+	transition: 0.3s;
+	&:hover {
+		@include text('Montserrat', 16px, 700, $color);
+		background-color: $text;
+		transition: 0.3s;
+	}
+	@media (max-width: 380px) {
+		transform: none;
+	}
+}

@@ -1,0 +1,74 @@
+@import '../variables.scss';
+.about {
+	margin-top: 80px;
+	text-align: center;
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&-text {
+			text-align: start;
+			@include text('Montserrat', 20px, 500, $main);
+			max-width: 765px;
+		}
+		margin-bottom: 10px;
+	}
+	&__btn {
+		@include btn($accent2, $main2);
+		display: inline-block;
+	}
+	&__mission {
+		margin-top: 80px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&-text {
+			@include text('Comfortaa', 24px, 700, $main);
+			text-transform: none;
+			max-width: 1000px;
+		}
+		&-quotationМarks {
+			@include text('Comfortaa', 128px, 700, $accent2);
+			line-height: 100%;
+		}
+		.quotationМarks2 {
+			rotate: 180deg;
+		}
+	}
+}
+@media (max-width: 380px) {
+	.about {
+		margin-top: 30px;
+		&__block {
+			flex-direction: column;
+			&-img {
+				max-width: 350px;
+				padding-top: 15px;
+			}
+			&-text {
+				text-align: start;
+				@include text('Montserrat', 10px, 500, $main);
+				max-width: 350px;
+			}
+			margin-bottom: 10px;
+		}
+		&__btn {
+			padding: 5px 10px;
+			font-size: 10px;
+			border-radius: 5px;
+		}
+		&__mission {
+			margin-top: 30px;
+
+			&-text {
+				@include text('Comfortaa', 10px, 700, $main);
+				text-transform: none;
+				max-width: 300px;
+			}
+			&-quotationМarks {
+				@include text('Comfortaa', 60px, 700, $accent2);
+				line-height: 100%;
+			}
+		}
+	}
+}

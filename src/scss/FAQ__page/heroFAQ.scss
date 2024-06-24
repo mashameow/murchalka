@@ -1,0 +1,73 @@
+.heroFAQ {
+	&__text {
+		@include text('Montserrat', 16px, 500, $main);
+		margin: 65px 0 35px 0;
+		.red {
+			font-weight: 700;
+		}
+	}
+	&__title {
+		@include text('Montserrat', 24px, 700, $main);
+		text-align: center;
+	}
+	&__details {
+		margin-top: 35px;
+		padding: 15px 20px;
+		border-radius: 15px;
+		box-shadow: 0px 0px 15px 4px #00000040;
+		&-block {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			&-question {
+				@include text('Montserrat', 16px, 700, $main);
+			}
+			&-answer {
+				@include text('Montserrat', 14px, 500, $main);
+				padding: 11px 0px 5px 0px;
+			}
+		}
+	}
+}
+
+summary::marker {
+	content: '';
+}
+details[open] .heroFAQ__details-block-img {
+	transform: rotate(180deg);
+	transition: transform 0.4s ease;
+}
+
+details .heroFAQ__details-block-img {
+	transform: rotate(0);
+	transition: transform 0.4s ease;
+}
+@media (max-width: 380px) {
+	.heroFAQ {
+		&__text {
+			@include text('Montserrat', 10px, 500, $main);
+			margin: 30px 0 15px 0;
+		}
+		&__title {
+			@include text('Montserrat', 15px, 700, $main);
+		}
+		&__details {
+			margin-top: 15px;
+			padding: 5px 10px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px 0px #00000040;
+			&-block {
+				&-img {
+					max-width: 20px;
+				}
+				&-question {
+					@include text('Montserrat', 10px, 700, $main);
+				}
+				&-answer {
+					@include text('Montserrat', 8px, 500, $main);
+					padding: 5px 0px 5px 0px;
+				}
+			}
+		}
+	}
+}

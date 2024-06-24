@@ -1,0 +1,67 @@
+.supports {
+	margin-top: 65px;
+	&__title {
+		@include text('Montserrat', 24px, 700, $main);
+	}
+	&__text {
+		margin-top: 30px;
+		@include text('Montserrat', 16px, 500, $main);
+	}
+	&__block {
+		margin-top: 50px;
+		display: flex;
+		justify-content: center;
+		column-gap: 54px;
+		&-card {
+			display: flex;
+			border-radius: 15px;
+			box-shadow: 0px 0px 15px 4px #00000040;
+			padding: 10px;
+			align-items: center;
+			&-info {
+				margin-left: 10px;
+				width: 207px;
+				&-title {
+					@include text('Montserrat', 16px, 700, $main);
+				}
+				&-text {
+					margin-top: 20px;
+					@include text('Montserrat', 12px, 500, $main);
+				}
+			}
+		}
+	}
+}
+@media (max-width: 380px) {
+	.supports {
+		margin-top: 30px;
+		&__title {
+			@include text('Montserrat', 15px, 700, $main);
+		}
+		&__text {
+			margin-top: 30px;
+			@include text('Montserrat', 10px, 500, $main);
+		}
+		&__block {
+			margin-top: 5px;
+			display: flex;
+			justify-content: center;
+			column-gap: 15px;
+			flex-wrap: wrap;
+			&-card {
+				box-shadow: 0px 0px 10px 0px #00000040;
+				margin-top: 15px;
+				&-info {
+					margin-left: 10px;
+					&-title {
+						@include text('Montserrat', 10px, 700, $main);
+					}
+					&-text {
+						margin-top: 5px;
+						@include text('Montserrat', 8px, 500, $main);
+					}
+				}
+			}
+		}
+	}
+}

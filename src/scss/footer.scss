@@ -1,0 +1,95 @@
+@import 'variables.scss';
+.footer {
+	box-shadow: 0px 0px 15px 4px #00000040;
+	padding-top: 30px;
+	&__container {
+		max-width: 1375px;
+	}
+	&__links {
+		display: flex;
+		justify-content: space-between;
+		&-socials {
+			column-gap: 25px;
+			display: flex;
+		}
+	}
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		&-items {
+			text-align: left;
+			margin: 15px 0 50px 0;
+			&2 {
+				margin: 15px 90px 50px 90px;
+			}
+			&-text {
+				@include text('Montserrat', 16px, 500, $main);
+				display: inline-block;
+				&:nth-child(odd) {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	&__rights {
+		@include text('Montserrat', 20px, 500, $main);
+		padding: 25px;
+		text-align: center;
+		border-top: 2px solid $accent2;
+		&-text {
+			text-transform: none;
+		}
+	}
+}
+@media (max-width: 380px) {
+	.footer {
+		box-shadow: 0px 0px 15px 4px #00000040;
+		padding-top: 15px;
+		&__container {
+			max-width: 375px;
+		}
+		&__links {
+			padding-bottom: 15px;
+			&-socials {
+				&-img-vk {
+					max-width: 25px;
+				}
+				&-img-tg {
+					max-width: 25px;
+				}
+				column-gap: 5px;
+			}
+		}
+		&__block {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: center;
+			&-items {
+				text-align: left;
+				margin: 0;
+				display: flex;
+				&2 {
+					margin: 0;
+				}
+				&-text {
+					@include text('Montserrat', 10px, 500, $main);
+					display: inline-block;
+					margin-right: 20px;
+					&:nth-child(odd) {
+						margin-bottom: 7px;
+					}
+				}
+			}
+		}
+		&__rights {
+			@include text('Montserrat', 10px, 500, $main);
+			padding: 10px;
+			text-align: center;
+			border-top: 2px solid $accent2;
+			&-text {
+				text-transform: none;
+			}
+		}
+	}
+}

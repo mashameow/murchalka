@@ -1,0 +1,29 @@
+@import 'variables.scss';
+.hero {
+	&__container {
+		position: relative;
+		margin-top: 131px;
+		&-title {
+			max-width: 785px;
+			@include text('Montserrat', 60px, 700, $main);
+			&-green {
+				color: $accent;
+			}
+		}
+		&-btn {
+			@include text('Montserrat', 16px, 700, $main2);
+			padding: 15px 30px;
+			background-color: $accent;
+		}
+		&-img {
+			position: absolute;
+			right: 0;
+			top: -65px;
+			z-index: -1;
+		}
+		&-red {
+			position: absolute;
+			left: -222px;
+		}
+	}
+}

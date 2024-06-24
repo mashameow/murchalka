@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../src/scss/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ADMIN</title>
+	</head>
+
+	<body class="admin">
+		<div class="container admin__container">
+			<h1 class="admin_title">что вы хотите сделать?</h1>
+			<div class="admin_block">
+				<button
+					class="admin-btn adding"
+					onclick="document.querySelector('.addPopup').classList.remove('none')"
+				>
+					Добавить запись в таблицу
+				</button>
+				<button
+					class="admin-btn update"
+					onclick="document.querySelector('.updatePopup').classList.remove('none')"
+				>
+					Изменить данные в таблице
+				</button>
+				<button
+					class="admin-btn exit delite"
+					onclick="document.querySelector('.delitePopup').classList.remove('none')"
+				>
+					Удалить запись из таблицы
+				</button>
+				<button
+					class="admin-btn view"
+					onclick="document.querySelector('.viewPopup').classList.remove('none')"
+				>
+					Посмотреть таблицы
+				</button>
+				<button onclick="redirectToViewsPage()" class="admin-btn view">
+					Посмотреть представления
+				</button>
+				<button
+					onclick="redirectToAccountPage()"
+					class="admin-btn exit exit-admin"
+				>
+					Выйти
+				</button>
+			</div>
+		</div>
+		<div class="addPopup popup none">
+			<div class="popup__block adminPopup__form">
+				<p class="popup__block-title">выберите таблицу для добавления:</p>
+				<div class="adminPopup_block">
+					<button
+						name="adminApp"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.applicationAdd').classList.remove('none'), document.querySelector('.addPopup').classList.add('none')"
+					>
+						заявки
+					</button>
+					<button
+						name="adminFamily"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.familyAdd').classList.remove('none'),document.querySelector('.addPopup').classList.add('none')"
+					>
+						семья</button
+					><button
+						name="adminPet"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.petAdd').classList.remove('none'),document.querySelector('.addPopup').classList.add('none')"
+					>
+						животные</button
+					><button
+						name="adminVolunteer"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.volunteerAdd').classList.remove('none'),document.querySelector('.addPopup').classList.add('none')"
+					>
+						волонтеры
+					</button>
+					<button
+						name="adminUser"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.userAdd').classList.remove('none'), document.querySelector('.addPopup').classList.add('none')"
+					>
+						пользователи
+					</button>
+				</div>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.addPopup').classList.add('none')"
+				>
+					✖
+				</button>
+			</div>
+		</div>
+		<div class="updatePopup popup none">
+			<div class="popup__block adminPopup__form">
+				<p class="popup__block-title">выберите таблицу для изменения:</p>
+				<div class="adminPopup_block">
+					<button
+						name="adminApp"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.applicationUp').classList.remove('none'), document.querySelector('.updatePopup').classList.add('none')"
+					>
+						заявки
+					</button>
+					<button
+						name="adminFamily"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.familyUp').classList.remove('none'),document.querySelector('.updatePopup').classList.add('none')"
+					>
+						семья</button
+					><button
+						name="adminPet"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.petUp').classList.remove('none'),document.querySelector('.updatePopup').classList.add('none')"
+					>
+						животные</button
+					><button
+						name="adminVolunteer"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.volunteerUp').classList.remove('none'),document.querySelector('.updatePopup').classList.add('none')"
+					>
+						волонтеры
+					</button>
+					<button
+						name="adminUser"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.userUp').classList.remove('none'), document.querySelector('.updatePopup').classList.add('none')"
+					>
+						пользователи
+					</button>
+				</div>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.updatePopup').classList.add('none')"
+				>
+					✖
+				</button>
+			</div>
+		</div>
+		<div class="delitePopup popup none">
+			<div class="popup__block adminPopup__form">
+				<p class="popup__block-title">выберите таблицу для удаления:</p>
+				<div class="adminPopup_block">
+					<button
+						name="adminApp"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.applicationDel').classList.remove('none'), document.querySelector('.delitePopup').classList.add('none')"
+					>
+						заявки
+					</button>
+					<button
+						name="adminFamily"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.familyDel').classList.remove('none'),document.querySelector('.delitePopup').classList.add('none')"
+					>
+						семья</button
+					><button
+						name="adminPet"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.petDel').classList.remove('none'),document.querySelector('.delitePopup').classList.add('none')"
+					>
+						животные</button
+					><button
+						name="adminVolunteer"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.volunteerDel').classList.remove('none'),document.querySelector('.delitePopup').classList.add('none')"
+					>
+						волонтеры
+					</button>
+					<button
+						name="adminUser"
+						class="popup__block-btn popup-btn adminPopup-btn"
+						onclick="document.querySelector('.userDel').classList.remove('none'), document.querySelector('.delitePopup').classList.add('none')"
+					>
+						пользователи
+					</button>
+				</div>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.delitePopup').classList.add('none')"
+				>
+					✖
+				</button>
+			</div>
+		</div>
+		<div class="viewPopup popup none">
+			<div
+				method="post"
+				action="../src/view.php"
+				class="popup__block adminPopup__form viewPopup-form"
+			>
+				<p class="popup__block-title">выберите таблицу для просмотра:</p>
+				<div class="adminPopup_block">
+					<form action="../src/viewTab/application.php">
+						<button
+							name="applicationViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.applicationView').classList.remove('none'), document.querySelector('.viewPopup').classList.add('none')"
+						>
+							заявки
+						</button>
+					</form>
+					<form action="../src/viewTab/family.php">
+						<button
+							name="familyViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.familyView').classList.remove('none'),document.querySelector('.viewPopup').classList.add('none')"
+						>
+							семья
+						</button>
+					</form>
+					<form action="../src/viewTab/pet.php">
+						<button
+							name="petViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.petView').classList.remove('none'),document.querySelector('.viewPopup').classList.add('none')"
+						>
+							животные
+						</button>
+					</form>
+					<form action="../src/viewTab/volunteer.php">
+						<button
+							name="volunteerViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.volunteerView').classList.remove('none'),document.querySelector('.viewPopup').classList.add('none')"
+						>
+							волонтеры
+						</button>
+					</form>
+					<form action="../src/viewTab/user.php">
+						<button
+							name="userViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.userView').classList.remove('none'), document.querySelector('.viewPopup').classList.add('none')"
+						>
+							пользователи
+						</button>
+					</form>
+					<form action="../src/viewTab/healthConditions.php">
+						<button
+							name="healthConditionsViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.healthConditionsView').classList.remove('none'), document.querySelector('.viewPopup').classList.add('none')"
+						>
+							сост. здоровья
+						</button>
+					</form>
+					<form action="../src/viewTab/session.php">
+						<button
+							name="sessionViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.sessionView').classList.remove('none'), document.querySelector('.viewPopup').classList.add('none')"
+						>
+							сессия
+						</button>
+					</form>
+					<form action="../src/viewTab/statusApp.php">
+						<button
+							name="statusAppViewTab"
+							class="popup__block-btn popup-btn adminPopup-btn"
+							onclick="document.querySelector('.statusAppView').classList.remove('none'), document.querySelector('.viewPopup').classList.add('none')"
+						>
+							статус заяв.
+						</button>
+					</form>
+				</div>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.viewPopup').classList.add('none')"
+				>
+					✖
+				</button>
+			</div>
+		</div>
+		<div class="applicationDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID заявки:</p>
+				<p class="popup__block-text">ID заявки</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID заявки"
+					name="applicationDel"
+				/>
+				<button
+					name="applicationDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.applicationDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="familyDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID семьи:</p>
+				<p class="popup__block-text">ID семьи</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID семьи"
+					name="familyDel"
+				/>
+				<button
+					name="familyDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.familyDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="healthDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID статуса здоровья:</p>
+				<p class="popup__block-text">ID статуса здоровья</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID животного"
+					name="healthDelInp"
+				/>
+				<button
+					name="healthDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.healthDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="sessionDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID сессии:</p>
+				<p class="popup__block-text">ID сессии</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID животного"
+					name="sessionDelInp"
+				/>
+				<button
+					name="sessionDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.sessionDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="stausDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID статуса:</p>
+				<p class="popup__block-text">ID статуса</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID статуса"
+					name="statusDelInp"
+				/>
+				<button
+					name="stausDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.stausDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="petDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID животного:</p>
+				<p class="popup__block-text">ID животного</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID животного"
+					name="petDel"
+				/>
+				<button
+					name="petDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.petDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="volunteerDel popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите ID волонтера:</p>
+				<p class="popup__block-text">ID волонтера</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID волонтера"
+					name="volunteerDel"
+				/>
+				<button
+					name="volunteerDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.volunteerDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="applicationAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">comment</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="comment"
+					name="applicationAdd_comment"
+				/>
+				<p class="popup__block-text">ID_users</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_users"
+					name="applicationAdd_ID_users"
+				/>
+				<p class="popup__block-text">ID_pets</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_pets"
+					name="applicationAdd_ID_pets"
+				/>
+				<p class="popup__block-text">ID_statusApp</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_statusApp"
+					name="applicationAdd_ID_status"
+				/>
+				<p class="popup__block-text">number</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="number"
+					name="applicationAdd_number"
+				/>
+				<button
+					name="applicationAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.applicationAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="healthAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">descriptionHealth</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="descriptionHealth"
+					name="healthAdd_descriptionHealth"
+				/>
+				<button
+					name="healthAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.healthAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="sessionAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">ID_users</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_users"
+					name="sessionAdd_ID_users"
+				/>
+				<p class="popup__block-text">dateStart</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="dateStart"
+					name="sessionAdd_dateStart"
+				/>
+				<p class="popup__block-text">dateEnd</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="dateEnd"
+					name="sessionAdd_dateEnd"
+				/>
+				<button
+					name="sessionAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.sessionAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="stausAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+
+				<p class="popup__block-text">name</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="name"
+					name="stausAdd_name"
+				/>
+
+				<button
+					name="stausAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.sessionAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="userDel addingPopup popup none">
+			<form
+				method="post"
+				action="../src/delite.php"
+				class="popup__block DelPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">ID_users</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_users"
+					name="userDel_ID_users"
+				/>
+
+				<button
+					name="userDelBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					удалить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.userDel').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="userAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">name</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="name"
+					name="userAdd_name"
+				/>
+				<p class="popup__block-text">email</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="email"
+					name="userAdd_email"
+				/>
+				<p class="popup__block-text">phone</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="phone"
+					name="userAdd_phone"
+				/>
+				<p class="popup__block-text">password</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="password"
+					name="userAdd_password"
+				/>
+				<p class="popup__block-text">role</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="role"
+					name="userAdd_role"
+				/>
+				<button
+					name="userAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.userAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="userUp addingPopup popup none">
+			<form
+				method="post"
+				action="../src/update.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">ID_users</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_users"
+					name="userUp_ID_users"
+				/>
+				<p class="popup__block-text">name</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="name"
+					name="userUp_name"
+				/>
+				<p class="popup__block-text">email</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="email"
+					name="userUp_email"
+				/>
+				<p class="popup__block-text">phone</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="phone"
+					name="userUp_phone"
+				/>
+				<p class="popup__block-text">password</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="password"
+					name="userUp_password"
+				/>
+				<p class="popup__block-text">role</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="role"
+					name="userUp_role"
+				/>
+				<button
+					name="userUpBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					изменить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.userUp').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="familyAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">number</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="number"
+					name="familyAdd_number"
+				/>
+				<button
+					name="familyAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.familyAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="petAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block petAdd__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<div class="petPopup_block">
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">name</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="name"
+							name="petAdd_name"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">age</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="age"
+							name="petAdd_age"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">floor</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="floor"
+							name="petAdd_floor"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_healthConditions</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="ID_healthConditions"
+							name="petAdd_ID_healthConditions"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">history</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="history"
+							name="petAdd_history"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">features</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="features"
+							name="petAdd_features"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">photo</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="photo"
+							name="petAdd_photo"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">status</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="status"
+							name="petAdd_status"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">dateReceipt</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="dateReceipt"
+							name="petAdd_dateReceipt"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_volunteer</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="ID_volunteer"
+							name="petAdd_ID_volunteer"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_family</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="ID_family"
+							name="petAdd_ID_family"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">kind</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petAdd-input"
+							placeholder="kind"
+							name="petAdd_kind"
+						/>
+					</div>
+				</div>
+				<button name="petAddBtn" class="popup__block-btn popup-btn petAddBtn">
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.petAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="volunteerAdd addingPopup popup none">
+			<form
+				method="post"
+				action="../src/adding.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">FIO</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="FIO"
+					name="volunteerAdd_FIO"
+				/>
+				<p class="popup__block-text">phone</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="phone"
+					name="volunteerAdd_phone"
+				/>
+				<p class="popup__block-text">email</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="email"
+					name="volunteerAdd_email"
+				/>
+				<p class="popup__block-text">specialization</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="specialization"
+					name="volunteerAdd_specialization"
+				/>
+				<button
+					name="volunteerAddBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					добавить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.volunteerAdd').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="applicationUp addingPopup popup none">
+			<form
+				method="post"
+				action="../src/update.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">ID_application</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_aplication"
+					name="applicationUp_ID_application"
+				/>
+				<p class="popup__block-text">comment</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="comment"
+					name="applicationUp_comment"
+				/>
+				<p class="popup__block-text">ID_users</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_users"
+					name="applicationUp_ID_users"
+				/>
+				<p class="popup__block-text">ID_pets</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_pets"
+					name="applicationUp_ID_pets"
+				/>
+				<p class="popup__block-text">ID_statusApp</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_statusApp"
+					name="applicationUp_ID_status"
+				/>
+				<p class="popup__block-text">number</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="number"
+					name="applicationUp_number"
+				/>
+				<button
+					name="applicationUpBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					изменить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.applicationUp').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="familyUp addingPopup popup none">
+			<form
+				method="post"
+				action="../src/update.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">ID_family</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_family"
+					name="familyUp_ID_family"
+				/>
+				<p class="popup__block-text">number</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="number"
+					name="familyUp_number"
+				/>
+				<button
+					name="familyUpBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					изменить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.familyUp').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="petUp addingPopup popup none">
+			<form
+				method="post"
+				action="../src/update.php"
+				class="popup__block petUp__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<div class="petPopup_block">
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_pets</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="ID_pets"
+							name="petUp_ID_pets"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">name</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="name"
+							name="petUp_name"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">age</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="age"
+							name="petUp_age"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">floor</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="floor"
+							name="petUp_floor"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_healthConditions</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="ID_healthConditions"
+							name="petUp_ID_healthConditions"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">history</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="history"
+							name="petUp_history"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">features</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="features"
+							name="petUp_features"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">photo</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="photo"
+							name="petUp_photo"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">status</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="status"
+							name="petUp_status"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">dateReceipt</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="dateReceipt"
+							name="petUp_dateReceipt"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_volunteer</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="ID_volunteer"
+							name="petUp_ID_volunteer"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">ID_family</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="ID_family"
+							name="petUp_ID_family"
+						/>
+					</div>
+					<div class="petPopup_block-ti">
+						<p class="popup__block-text">kind</p>
+						<input
+							type="text"
+							class="popup__block-input reg__name petUp-input"
+							placeholder="kind"
+							name="petUp_kind"
+						/>
+					</div>
+					<div class="petUpBtn-block">
+						<button name="petUpBtn" class="popup__block-btn popup-btn petUpBtn">
+							изменить
+						</button>
+					</div>
+				</div>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.petUp').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<div class="volunteerUp addingPopup popup none">
+			<form
+				method="post"
+				action="../src/update.php"
+				class="popup__block addingPopup__form"
+			>
+				<p class="popup__block-title">введите данные:</p>
+				<p class="popup__block-text">ID_volunteer</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="ID_volunteer"
+					name="volunteerUp_ID_volunteer"
+				/>
+				<p class="popup__block-text">FIO</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="FIO"
+					name="volunteerUp_FIO"
+				/>
+				<p class="popup__block-text">phone</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="phone"
+					name="volunteerUp_phone"
+				/>
+				<p class="popup__block-text">email</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="email"
+					name="volunteerUp_email"
+				/>
+				<p class="popup__block-text">specialization</p>
+				<input
+					type="text"
+					class="popup__block-input reg__name"
+					placeholder="specialization"
+					name="volunteerUp_specialization"
+				/>
+				<button
+					name="volunteerUpBtn"
+					class="popup__block-btn popup-btn adminPopup-btn"
+				>
+					изменить
+				</button>
+				<button
+					type="reset"
+					class="popup__block-close closeAdminPopup close"
+					onclick="document.querySelector('.volunteerUp').classList.add('none')"
+				>
+					✖
+				</button>
+			</form>
+		</div>
+		<script>
+			function redirectToAccountPage() {
+				window.location.replace('./account.php');
+			}
+			function redirectToViewsPage() {
+				window.location.replace('../src/views.php');
+			}
+		</script>
+	</body>
+</html>

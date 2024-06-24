@@ -1,0 +1,51 @@
+@import '../variables.scss';
+.achievements {
+	margin-top: 65px;
+	&__title {
+		@include text('Montserrat', 32px, 700, $main);
+		text-align: center;
+	}
+	&__block {
+		display: flex;
+		justify-content: center;
+		column-gap: 95px;
+		&-card {
+			margin-top: 45px;
+			box-shadow: 0px 0px 15px 4px #00000040;
+			padding: 14px 24px;
+			max-width: 207px;
+			background-color: $main2;
+			border-radius: 15px;
+			text-align: center;
+			&-text {
+				@include text('Montserrat', 16px, 500, $main);
+				margin-top: 20px;
+			}
+		}
+	}
+}
+@media (max-width: 380px) {
+	.achievements {
+		margin-top: 30px;
+		&__title {
+			@include text('Montserrat', 15px, 700, $main);
+		}
+		&__block {
+			column-gap: 5px;
+			&-card {
+				margin-top: 25px;
+				box-shadow: 0px 0px 10px 0px #00000040;
+				padding: 15px 5px 5px 5px;
+				max-width: 100px;
+				border-radius: 10px;
+				&:nth-child(2) .achievements__block-card-icon {
+					margin: 4px 0;
+				}
+				&-text {
+					@include text('Montserrat', 6px, 500, $main);
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
